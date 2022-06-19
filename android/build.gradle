@@ -2,8 +2,7 @@ group 'com.jumio.jumiomobilesdk'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.6.21'
-    ext.android_gradle_version = '7.2.0'
+    ext.kotlin_version = '1.6.10'
     repositories {
         google()
         mavenCentral()
@@ -11,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -38,6 +37,16 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 31
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -45,9 +54,6 @@ android {
 
     defaultConfig {
         minSdkVersion 21
-    }
-    lintOptions {
-        disable 'InvalidPackage'
     }
 }
 
