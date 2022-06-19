@@ -24,16 +24,16 @@ class JumioMobileSdkPlugin : FlutterPlugin, MethodCallHandler, ActivityAware, Pl
     companion object {
         private const val CHANNEL_NAME = "com.jumio.fluttersdk"
 
-        @Suppress("unused")
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            val instance = JumioMobileSdkPlugin()
-            val channel = MethodChannel(registrar.messenger(), CHANNEL_NAME)
-            channel.setMethodCallHandler(instance)
-            registrar.addActivityResultListener(instance)
-            registrar.addRequestPermissionsResultListener(instance)
-            instance.modules.forEach { it.bindToActivity(registrar.activity()) }
-        }
+//         @Suppress("unused")
+//         @JvmStatic
+//         fun registerWith(registrar: Registrar) {
+//             val instance = JumioMobileSdkPlugin()
+//             val channel = MethodChannel(registrar.messenger(), CHANNEL_NAME)
+//             channel.setMethodCallHandler(instance)
+//             registrar.addActivityResultListener(instance)
+//             registrar.addRequestPermissionsResultListener(instance)
+//             instance.modules.forEach { it.bindToActivity(registrar.activity()) }
+//         }
     }
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
